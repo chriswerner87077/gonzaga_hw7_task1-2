@@ -24,20 +24,25 @@ void copy_ptrs(double* ar2, const double* start, const double* end);
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	// Declare arays and initialize source array
 	double source[LEN] = {1.1, 2.2, 3.3, 4.4, 5.5};
 	double target1[LEN];
 	double target2[LEN];
-	double target3[LEN];
-	printf("Source array: ");
+	double target3[LEN]; 
+	// display soruce array
+	printf("Source array: " );
 	show_arr(source, LEN);
+	// Copy source array to target 1 and display using index
 	printf("\nCopied by subscript: ");
 	copy_arr(target1, source, LEN);
 	show_arr(target1, LEN);
+	// Copy source array to target 2 and display using pointers
 	printf("\nCopied by pointer: ");
 	copy_ptr(target2, source, LEN);
-	show_arr(target2, LEN);
+	show_arr(target2, LEN); 
+	// Copy source array to target 3 and display using pointer range
 	printf("\nCopied using pointer range: ");
-	copy_ptrs(target3, source, source + LEN - 1);
+	copy_ptrs(target3, source, source + LEN);
 	show_arr(target3, LEN);
 	printf("\n");
 	return 0;
@@ -71,13 +76,9 @@ void copy_ptr(double* ar1, const double* ar2, int n)
 }
 void copy_ptrs(double* ar2, const double* start, const double* end)
 {
-	while (1)
+	while (start != end)
 	{
 		*(ar2++) = *(start++);
-		if (start == end)
-		{
-			break;
-		}
 	}
 
 	return;
