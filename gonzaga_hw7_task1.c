@@ -37,8 +37,9 @@ int main(int argc, char *argv[])
 	copy_ptr(target2, source, LEN);
 	show_arr(target2, LEN);
 	printf("\nCopied using pointer range: ");
-	copy_ptrs(target3, source[], source[]);
+	copy_ptrs(target3, source, source +4);
 	show_arr(target3, LEN);
+	printf("\n");
 	return 0;
 }
 
@@ -70,6 +71,14 @@ void copy_ptr(double* ar1, const double* ar2, int n)
 }
 void copy_ptrs(double* ar2, const double* start, const double* end)
 {
+	while (1)
+	{
+		*(ar2++) = *(start++);
+		if (start == end)
+		{
+			break;
+		}
+	}
 
 	return;
 }
