@@ -20,11 +20,10 @@ void MaxMin(int numvals, int vals[], int* min, int* max);
 /* Main Program */
 int main(int argc, char *argv[])
 {
-	int nums[MAXELS] = {2, 18, 1, 27, 16};
+	int nums[MAXELS] = {8, 16, 10, 5, 6, 7};
 	int i, max;
 
 	max = nums[0];
-
 	printf("Generating random list\n");
 	for (i = 1; i < MAXELS; i++)
 	{
