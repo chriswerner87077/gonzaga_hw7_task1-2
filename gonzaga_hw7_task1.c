@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	copy_ptr(target2, source, LEN);
 	show_arr(target2, LEN);
 	printf("\nCopied using pointer range: ");
-	copy_ptrs(target3, source, source +4);
+	copy_ptrs(target3, source, source + LEN - 1);
 	show_arr(target3, LEN);
 	printf("\n");
 	return 0;
