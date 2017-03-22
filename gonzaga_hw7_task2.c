@@ -35,11 +35,11 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void MaxMin(int numvals, int vals[], int* min, int* max)
 {
-	for (int i = 1; i < MAXELS; i++)
+	for (int i = 0; i < MAXELS; i++)
 	{
 		vals[i] = rand() % 99;
 	}
-	for (int j = 1; j < MAXELS; j++)
+	for (int j = 0; j < MAXELS; j++)
 	{
 		printf("%d ", vals[j]);
 		if (*max < vals[j])
