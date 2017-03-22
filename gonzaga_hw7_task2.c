@@ -13,6 +13,7 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>
+#include <time.h>
 
 #define MAXELS 10
 /* Function Prototypes */
@@ -20,19 +21,12 @@ void MaxMin(int numvals, int vals[], int* min, int* max);
 /* Main Program */
 int main(int argc, char *argv[])
 {
-	int nums[MAXELS] = {8, 16, 10, 5, 6, 7};
-	int i, max;
-
-	max = nums[0];
+	int ar1[MAXELS], min, max;
 	printf("Generating random list\n");
-	for (i = 1; i < MAXELS; i++)
-	{
-		if (max < nums[i])
-		{
-			max = nums[i];
-		}
-	}
-	printf("The maximum value is %d\n", max);
+	srand(time(NULL));
+	printf("This list is: \n");
+
+	MaxMin(MAXELS, ar1, &min, &max);
 
 	return 0;
 }
@@ -41,7 +35,26 @@ int main(int argc, char *argv[])
 /* Function Defenitions */
 void MaxMin(int numvals, int vals[], int* min, int* max)
 {
+	for (int i = 1; i < MAXELS; i++)
+	{
+		vals[i] = rand() % 99;
+	}
+	for (int j = 1; j < MAXELS; j++)
+	{
+		printf("%d ", vals[j]);
+		if (*max < vals[j])
+		{
+			*max = vals[j];
+		}
+		if (*min > vals[j])
+		{
+			*min = vals[j];
+		}
+	}
 
+	
+	printf("\nThe maximum value is: %d\n", *max);
+	printf("The minimum value is: %d\n", *min);
 	return;
 }
 
